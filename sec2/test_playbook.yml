@@ -1,0 +1,16 @@
+---
+- hosts: test_servers
+  tasks:
+  - name: create directory
+    file:
+      path: /home/kuniaki/tmp
+      state: directory
+      owner: kuniaki
+      mode: 0755
+
+  - name: copy file
+    copy:
+      src: /etc/hosts
+      dest: /home/kuniaki/tmp/hosts
+      owner: kuniaki
+      mode: 0644

@@ -1,0 +1,13 @@
+---
+- name: Initialize OS setting for Linux Servers
+  hosts: Linux_servers
+  become: ture
+
+## if need proxy setting
+
+  environment:
+   http_proxy: "http://redhat7-01.localnet:8080"
+   https_proxy: "http://redhat7-01.localnet:8080"
+
+  roles:
+    -

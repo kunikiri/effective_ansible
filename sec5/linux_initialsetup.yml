@@ -10,4 +10,22 @@
    https_proxy: "http://redhat7-01.localnet:8080"
 
   roles:
-    -
+    - role: common/locale
+      tags: "locale"
+    - role: common/packages
+      tags: "packages"
+    - role: common/users
+      tags: "users"
+    - role: common/networks
+      tags: "networks"
+    - role: common/resolver
+      tags: "resolver"
+
+  post_tasks:
+    - name: Restart target node
+      reboot:
+      
+    - name: Witeing connection
+      wait_for_connection:
+        delay: 5
+        timeout: 60

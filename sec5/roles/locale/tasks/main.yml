@@ -11,3 +11,4 @@
 ## Set keybord map
 - name: main / Setup keypmap
   command: localectl set-keymap {{ locale_keymap }}
+  

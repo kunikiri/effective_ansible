@@ -1,0 +1,13 @@
+---
+## Set timezone
+- name: main / Setup timezone
+  timezone:
+    name: "{{ locale_timezone }}"
+
+## Set system locale
+- name: main / Setup locale
+  command: localectl set-locale LANG={{ locale_locale }}
+
+## Set keybord map
+- name: main / Setup keypmap
+  command: localectl set-keymap {{ locale_keymap }}

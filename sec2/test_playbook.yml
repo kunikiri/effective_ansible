@@ -13,5 +13,4 @@
       src: /etc/hosts
       dest: /home/kuniaki/tmp/hosts
       owner: kuniaki
-      mode: 0644
-      
+      mode: 0645

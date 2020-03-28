@@ -1,0 +1,22 @@
+---
+## 1. Read role_vars by Linux distribution
+- name: main / Add the OS spesific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+## 2. Set repository to epel-release and update yum packages
+## name: * and state: latest means "yum update -y"
+- name: main / Update yum packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop:
+    - "epel-release"
+    - "*"
+  when: ansible_os_familiy == 'RedHat'
+
+## 3. install required  packages
+- name: main / Install the required packages
+  package:
+    name: "{{ required_packages }}"
+    state: present

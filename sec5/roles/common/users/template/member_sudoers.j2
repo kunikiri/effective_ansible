@@ -1,0 +1,3 @@
+Cmnd_Alias PROCESS_CMD = /bin/nice, /bin/kill, /usr/bin/kill, /usr/bin/killall
+Cmnd_Alias SHUTDOWN_CMDS = /usr/sbin/reboot, /usr/sbin/shutdown
+{{ item.key }} ALL=(ALL) ALL, !PROCESS_CMD, !SHUTDOWN_CMDS

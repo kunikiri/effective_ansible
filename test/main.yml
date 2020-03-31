@@ -1,5 +1,6 @@
 ---
 - hosts: target-cent1.localnet
+  
   tasks:
     - name: nmcli test
       nmcli:

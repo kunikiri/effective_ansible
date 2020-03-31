@@ -1,0 +1,2 @@
+---
+external_ip: "{{ ansible_host }}/24"

@@ -1,0 +1,6 @@
+---
+external_gw: "10.0.0.1"
+
+network_ethernet:
+  - {conn_name: 'ens10', ip4: "{{ external_ip }}", gw4: "{{ operation_gw }}"}
+  
